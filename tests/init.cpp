@@ -1,37 +1,17 @@
 #include <BinaryTree.hpp>
 #include <catch.hpp>
 
-SCENARIO ("init", "[init]")
+SCENARIO(sort,[sort])
 {
-  BinaryTree<int> obj;
-  REQUIRE(obj.root_() == nullptr);
-}
-
-SCENARIO("insert", "[insert]")
-{
-  BinaryTree<int> obj;
-  obj.insert_node(3);
-  REQUIRE(obj.find_node(3, obj.root_())->data == 3);
-}
-
-SCENARIO("find_node", "[find_node]")
-{
-  BinaryTree<int> obj;
-  obj.insert_node(2);
-  REQUIRE(obj.find_node(2, obj.root_()) != nullptr);
-  REQUIRE(obj.find_node(2, obj.root_())->data == 2);
-}
-
-SCENARIO("get root", "[get root]")
-{
-  BinaryTree<int> obj;
-  obj.insert_node(4);
-  REQUIRE(obj.root_() != 0);
-}
-
-SCENARIO ("output to cout", "<<")
-{
- BinaryTree<int> tree;
- tree.insert_node(3);
- REQUIRE( std::cout << tree );
+  int matrix[2][2] = { { 222, 555 },{ 111, 444 }};
+	int sorted_matrix[2][2] = { { 111, 222 },{ 444, 555 } };
+	int* first = &matrix[0][0];
+	int* second = &matrix[1][2];
+	insertion_sort(first, second);
+	bool check = NULL;
+	for (int i = 0; i < 2; i++)
+	for (int j = 0; j < 2; j++)
+	if (matrix[i][j] == sorted_matrix[i][j])
+	check = true;
+	REQUARE(check == true)
 }
