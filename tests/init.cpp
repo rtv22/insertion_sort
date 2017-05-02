@@ -13,5 +13,5 @@ SCENARIO("sort","[sort]")
 	for (int j = 0; j < 2; j++)
 	if (matrix[i][j] == sorted_matrix[i][j])
 	check = true;
-	REQUARE(check == true);
+	REQUIRE(check == true);
 }
