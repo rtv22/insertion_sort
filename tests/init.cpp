@@ -3,15 +3,14 @@
 
 SCENARIO("sort","[sort]")
 {
-  int matrix[2][2] = { { 222, 555 },{ 111, 444 }};
-	int sorted_matrix[2][2] = { { 111, 222 },{ 444, 555 } };
-	int* first = &matrix[0][0];
-	int* second = &matrix[1][2];
+ 	int matrix[6] = { 222 , 111, 666, 333, 555, 444 };
+	int sorted_matrix[6] =  { 111, 222, 333, 444, 555, 666 };
+	int* first = &matrix[0];
+	int* second = &matrix[6];
 	insertion_sort(first, second);
 	bool check = NULL;
-	for (int i = 0; i < 2; i++)
-	for (int j = 0; j < 2; j++)
-	if (matrix[i][j] == sorted_matrix[i][j])
+	for (int i = 0; i < 6; i++)
+	if (matrix[i] == sorted_matrix[i])
 	check = true;
 	REQUIRE(check == true);
 }
